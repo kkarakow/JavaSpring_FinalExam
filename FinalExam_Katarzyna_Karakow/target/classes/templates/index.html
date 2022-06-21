@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+</head>
+<body>
+	<header th:replace="fragments/header.html :: header"></header>
+	<form method="post" action="#" th:action="@{/processForm}"
+		th:object="${parking}">
+
+		<input type="hidden" name="ticketNo" th:field="*{ticketNo}" />
+		<table>
+			<tr>
+				<td>Parking Spot Location:</td>
+				<td><select th:field="*{spotNo}">
+						<option th:each="s:${spotList}" th:value="${s.spotNo}"
+							th:text="${s.spotLocation}">
+				</select></td>
+			</tr>
+			<tr>
+				<td>Plate Number:</td>
+				<td><input type="text" th:field="*{plateNo}"></td>
+			</tr>
+			<tr>
+				<td>Date:</td>
+				<td><input type="date" th:field="*{date}"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Insert" /></td>
+			</tr>
+
+		</table>
+	</form>
+	<br>
+	<br>
+	<div>
+		<form method="get" action="#" th:action="@{/logout}">
+			<input type="submit" value="Logout" />
+
+		</form>
+
+	</div>
+	<footer th:replace="fragments/footer.html :: footer"></footer>
+
+
+</body>
+</html>

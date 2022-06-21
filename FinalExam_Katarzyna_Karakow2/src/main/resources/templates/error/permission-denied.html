@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<link th:href="@{/css/mycss.css}" rel="stylesheet" />
+<meta charset="UTF-8">
+<title>Permission denied</title>
+</head>
+<body>
+	<div class="table-wrapper">
+		<table class="fl-table">
+			<thead>
+				<tr>
+					<th colspan="3">
+						<h1>Permission denied</h1>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+
+					<td><h2>
+							<a href="/" th:href="@{/}"><button class="button">Home</button></a>
+						</h2></td>
+					<td><h2>
+							<a href="#" th:href="@{/logout}"><button class="button">Logout</button></a>
+						</h2></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
